@@ -9,9 +9,7 @@ Author: Dominick Lemas <dominicklemas@gmail.com>, Angela Tomczik
 Maintainer: Dominick Lemas <dominicklemas@gmail.com>
 URL: 
 Depends:
-    vegan,
-	gtools,
-	mail
+    vegan
 Suggests:    
 License: NA
 LazyData: true
