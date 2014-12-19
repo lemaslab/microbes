@@ -5,7 +5,7 @@
 # **************************************************************************** #
 
 #install.packages("matR", repo="http://dunkirk.mcs.anl.gov/~braithwaite/R", type="source")
-library("matR")
+#library("matR")
 dependencies ()
 setInternet2(use = TRUE)
 

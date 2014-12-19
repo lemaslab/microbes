@@ -26,7 +26,7 @@ list.files()
 # Create directory variable with functions
 #dir.source=c('C:/Users/tomczika/Documents/GitHub/microbes/R/')
 dir.source=c('C:/Users/lemasd/Documents/GitHub/microbes/R/')
-library(devtools)
+# library(devtools)
 load_all()
 
 # **************************************************************************** #
