@@ -1,4 +1,8 @@
-# This script is used to generate ALL data sets that will load with the microbes package
+# This script is used to generate ALL EXAMPLE data sets that will load with the microbes package
+
+# Working directory
+# setwd("C:/Users/lemasd/Documents/GitHub/microbes/data")
+# list.files()
 
 # **************************************************************************** #
 # ***************                Libraries                     *************** #
@@ -13,11 +17,6 @@
 # dependencies ()
 # setInternet2(use = TRUE)
 
-# Twin Dataset
-#-------------
-# Citation:
-
-
 # Meta Data
 #----------
 study_id=c("TS1","TS2","TS4","TS5","TS7","TS8","TS19","TS20","TS28","TS29","TS49","TS50")
@@ -28,8 +27,8 @@ mg_rast_wgs_id=c("mgm4440452.7","mgm4440453.6","mgm4440460.5","mgm4440461.5","mg
 mg_rast_otu_id=c("mgm4455493.3","mgm4455516.3","mgm4455571.3","mgm4455452.3","mgm4455521.3","mgm4455507.3","mgm4455405.3","mgm4455377.3",
                  "mgm4455376.3","mgm4455431.3","mgm4455653.3","mgm4455466.3")
 # create data.frame
-twin.meta=data.frame(study_id,twin,bmi_group,mg_rast_wgs_id,mg_rast_otu_id)
-save(twin.meta, file="twin_meta.rda ")
+twin_meta=data.frame(study_id,twin,bmi_group,mg_rast_wgs_id,mg_rast_otu_id)
+save(twin_meta, file="twin_meta.rda")
 
 # Whole-Genome Shotgun Data
 #--------------------------
@@ -54,13 +53,6 @@ kegg.view <- list(L1=c(entry="count",source="KEGG", level="level1"),L2=c(entry="
 subsystems.view <- list(L1=c(entry="count",source="Subsystems", level="level1"),L2=c(entry="count",source="Subsystems", level="level2"),L3=c(entry="count",source="Subsystems", level="level3"),L4=c(entry="count",source="Subsystems", level="function"))
 cog.view <- list(L1=c(entry="count",source="COG", level="level1"),L2=c(entry="count",source="COG", level="level2"),L3=c(entry="count",source="COG", level="level3"),L4=c(entry="count",source="COG", level="function"))
                          
-# KEGG (Need to isolate the EC #'s before useful)
-    # twin.kegg <- collection (twin_WGS_list, kegg.view)
-      # Create data.frame
-      # twin.kegg=as.data.frame(twin.kegg$L4)
-# Save as R-object
-# save(twin.kegg, file=" ")
-
 # COG
     twin.cog <- collection (twin_WGS_list, cog.view)
       # Create data.frame
@@ -81,11 +73,11 @@ cog.view <- list(L1=c(entry="count",source="COG", level="level1"),L2=c(entry="co
           twin.wgs.cog.s=twin.wgs.cog1[,c(1:4,11,12,5:9)]
           names(twin.wgs.cog.s)
           dim(twin.wgs.cog) # Should be 12 columns
-          twin.wgs.L4.cog=twin.wgs.cog.s
+          twin_wgs_L4_cog=twin.wgs.cog.s
       # Might need to add "pathway" variable name prior to export
       #-----------------------------------------
       # Save as R-object
-        save(twin.wgs.L4.cog, file="twin_wgs_L4_cog.rda")
+        save(twin_wgs_L4_cog, file="twin_wgs_L4_cog.rda")
 
 # 16S Amplicon Data
 #------------------
@@ -130,14 +122,8 @@ names(twin.otu.class.green1)
 =twin.otu.class.green1[,c(7,9,11,5,10,8,3,2,1,4,12,6)]
 names(twin.otu.class.green.s)
 dim(twin.otu.class.green.s) # Should be 12 columns
-twin.otu.class.green=twin.otu.class.green.s
+twin_otu_class_green=twin.otu.class.green.s
 # Might need to add "Taxa" variable name prior to export
 #-----------------------------------------
 # Save as R-object
-save(twin.otu.class.green, file="twin_otu_class_green.rda")
-twin.meta
-
-
-# Create data.frame
-save(twin.16S.class, file=" ")
-
+save(twin_otu_class_green, file="twin_otu_class_green.rda")
