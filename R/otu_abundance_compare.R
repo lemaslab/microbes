@@ -1,3 +1,11 @@
+#' Comparing two groups of data using a t-test and a Wilcoxon Rank Sum Test. 
+#'
+#' This function compares two sets of data using a Wilcoxon Rank Sum Test and a T-Test.
+#' @param df is otu.normed
+#' @keywords Wilcoxon
+#' @export
+#' @examples
+#' otu_abundance_compare()
 
 # **************************************************************************** #
 # ***************              START FUNCTION                  *************** #

@@ -1,7 +1,12 @@
-# **************************************************************************** #
-# **************************************************************************** #
+#' A Normalization by participant function. 
+#'
+#' This function normalizes the raw OTU counts by participant.
+#' @param df is otu.counts
+#' @keywords normalize
+#' @export
+#' @examples
+#' normalize_counts()
 
-# normalize_counts.R
 
 # **************************************************************************** #
 # ***************              START FUNCTION                  *************** #

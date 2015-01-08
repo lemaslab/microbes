@@ -1,16 +1,16 @@
-#' Calculate alpha diversity measures for each sample.
-#' 
-#' This function creates a data frame with alpha diversity estimates calculated for 
-#' each sample.
-#' @param otu_table data frame with 16s counts
-#' @param study_id vector that contains study id
-#' @param study_group vector that contains syudy groups
-#' @keywords alpha diversity
-#' @export
-#' @examples
-#' # Simulated data 
-#'   head( )
-#'   alpha_diversity_calc(otu.species.sort, meta.grp.sort$study_id, meta.grp.sort$bmi_group)
+##' Calculate alpha diversity measures for each sample.
+##' 
+##' This function creates a data frame with alpha diversity estimates calculated for 
+##' each sample.
+##' @param otu_table data frame with 16s counts
+##' @param study_id vector that contains study id
+##' @param study_group vector that contains syudy groups
+##' @keywords alpha diversity
+##' @export
+##' @examples
+##' # Simulated data 
+##'   head( )
+##'   alpha_diversity_calc(otu.species.sort, meta.grp.sort$study_id, meta.grp.sort$bmi_group)
 
 alpha_diversity_calc <- function(otu_table, study_id, study_group) {
   #otu_table <- otu.counts 
