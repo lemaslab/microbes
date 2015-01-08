@@ -61,7 +61,7 @@ cog.view <- list(L1=c(entry="count",source="COG", level="level1"),L2=c(entry="co
         names(twin.wgs.cog)
       # Rename columns using metadata
         # Sort metadata according to mg_rast_wgs_id
-          metadata.sort=twin.meta[order(mg_rast_wgs_id),]
+          metadata.sort=twin_meta[order(mg_rast_wgs_id),]
         # Sort twin.wgs.cog columsn according to metadata.sort
           twin.wgs.cog.sort=twin.wgs.cog[,match(metadata.sort$mg_rast_wgs_id, names(twin.wgs.cog))]
           names(twin.wgs.cog.sort)
@@ -102,14 +102,14 @@ rdp.16S  <- list(class=c(entry ="counts",annot="organism",source="RDP", level="c
 ssu.16S  <- list(class=c(entry ="counts",annot="organism",source="SSU", level="class"),order=c(entry ="counts",annot="organism",source="SSU", level="order"),family=c(entry ="counts",annot="organism",source="SSU", level="family"),genus=c(entry ="counts",annot="organism",source="SSU", level="genus"))
                       
 # Green Genes
-twin.16S.green <- collection (twin_16S_list, green.16S)
+twin.16S.green <- collection(twin_16S_list, green.16S)
 # Create data.frame
 twin.otu.class.green=as.data.frame(twin.16S.green$class) # might give error about "pending data". Wait 10 min.
 head(twin.otu.class.green)
 names(twin.otu.class.green)
 # Rename columns using metadata
 # Sort metadata according to mg_rast_wgs_id
-metadata.sort=twin.meta[order(mg_rast_otu_id),]
+metadata.sort=twin_meta[order(mg_rast_otu_id),]
 # Sort twin.wgs.cog columsn according to metadata.sort
 twin.otu.class.green.s=twin.otu.class.green[,match(metadata.sort$mg_rast_otu_id, names(twin.otu.class.green))]
 names(twin.otu.class.green.s)
@@ -119,7 +119,7 @@ colnames(twin.otu.class.green1)=metadata.sort$study_id
 names(twin.otu.class.green1)
 
 # Reorder twin.cog according to study_id
-=twin.otu.class.green1[,c(7,9,11,5,10,8,3,2,1,4,12,6)]
+twin.otu.class.green.s=twin.otu.class.green1[,c(7,9,11,5,10,8,3,2,1,4,12,6)]
 names(twin.otu.class.green.s)
 dim(twin.otu.class.green.s) # Should be 12 columns
 twin_otu_class_green=twin.otu.class.green.s

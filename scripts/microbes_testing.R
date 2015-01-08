@@ -25,15 +25,15 @@ library(microbes)
 
 # metadata
 load("twin_meta.rda")
-head(twin.meta)
+head(twin_meta)
 
 # 16S data
 load("twin_otu_class_green.rda")
-head(twin.otu.class.green)
+head(twin_otu_class_green)
 
 # wgs data
 load("twin_wgs_L4_cog.rda")
-head(twin.wgs.L4.cog)
+head(twin_wgs_L4_cog)
 
 
 # **************************************************************************** #
