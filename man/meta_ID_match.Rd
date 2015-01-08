@@ -10,7 +10,7 @@ meta_ID_match(data, otu)
   \item{data}{metadata or any other data frame with a participant ID column}
   \item{otu}{otu.normed, otu.counts or any other data frame with a participant ID column}
 }
-}
+
 \details{All inputs must have a study_id column}
 \value{
 The output is a list of 'study_id's that match between the two inputs
