@@ -11,7 +11,7 @@ meta_ID_error(data, otu)
   \item{otu}{
 otu.normed, otu.counts or any other data frame with a participant ID column}
 }
-}
+
 \details{All inputs must have a study_id column}
 \value{
 The output is a list of 'study_id's that do not match between the two inputs
