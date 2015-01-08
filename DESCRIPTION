@@ -1,9 +1,14 @@
 Package: microbes
 Type: Package
 Title: What the package does (short line)
-Version: 1.0
+Version: 0.1.0
 Date: 2015-01-07
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Author: Dominick Lemas <dominicklemas@gmail.com>, Angela Tomczik <Angela.Tomczik@Colorado.EDU>
+Maintainer: Dominick Lemas <dominicklemas@gmail.com>
 Description: More about what it does (maybe more than one line)
-License: What license is it under?
+URL: 
+Depends:
+    vegan
+Suggests:    
+License: NA
+LazyData: true
