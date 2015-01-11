@@ -1,14 +1,15 @@
 Package: microbes
 Type: Package
-Title: What the package does (short line)
-Version: 0.1.0
+Title: tools for analyzing microbiome data
+Version: 0.0.1
 Date: 2015-01-07
 Author: Dominick Lemas <dominicklemas@gmail.com>, Angela Tomczik <Angela.Tomczik@Colorado.EDU>
 Maintainer: Dominick Lemas <dominicklemas@gmail.com>
 Description: More about what it does (maybe more than one line)
-URL: 
+URL: https://github.com/dlemas/microbes
 Depends:
-    vegan
+    vegan,
+    devtools
 Suggests:    
 License: NA
 LazyData: true
