@@ -6,8 +6,11 @@
 
 -Check for data formats (meta_ID_error and meta_ID_match) needs a more informative output. 
  maybe list of files/samples that match. Could be more of a summary output. 
+    Angela- I will go through the limnod tutorial and see if I can apply the print.summary() function       that they used here
+
 
 -Anyway to fix the error messages from the wilcoxon.rank sum test when there are ties?
-
+    Angela- I don't know, I will look into this. 
 
 -Alpha_diversity_calc.R, drop the () from the output.
+    Angela- Will do. 
