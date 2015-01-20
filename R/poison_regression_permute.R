@@ -7,10 +7,8 @@
 # ***************              START FUNCTION                  *************** #
 # **************************************************************************** #
 
-poison_regression_permute <- function(wgs_path_count, n.total, n.gr1, n.gr2, email) {
+poison_regression_permute <- function(wgs_path_count, n.total, n.gr1, n.gr2) {
   # Libraries
-  library(gtools)  
-  library(mail)
   
   # Start the clock!
   ptm <- proc.time()
@@ -53,14 +51,14 @@ stop=c(proc.time() - ptm)
 stop[1]
 
 # Email Notification
-message.detail=paste("Calculation finished. Total Run Time: ",round(stop[1],digits=2)," seconds",sep="")
-email.notification=sendmail(email, subject="Notification from R: poison_regression_permute complete", 
-               message=message.detail, password="rmail")
+# message.detail=paste("Calculation finished. Total Run Time: ",round(stop[1],digits=2)," seconds",sep="")
+#email.notification=sendmail(email, subject="Notification from R: poison_regression_permute complete", 
+#               message=message.detail, password="rmail")
 
   # Combine P.values with counts
   return(wgs_path_count.new=cbind(wgs_path_count,PVALUES))
 
   # Send email notification
-  return(email.notification)
+  # return(email.notification)
 
 } # End of Function

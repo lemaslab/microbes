@@ -1,8 +1,15 @@
 library(devtools)
 install_github("dlemas/microbes")
 library(microbes)
+
+# Twin Study Data
 meta <- twin_meta
 otu.counts <- twin_otu_class_green
+wgs.counts <- twin_wgs_L4_cog
+
+# COG Pathway File (need to change name in Data directory so names match: currently COG_Pathway_File)
+# also need to identify if there are R packages or other resources we can use as pathway key.
+category2pathway.cog
 
 #####################################################################################################
 ################################        Checking data format         ################################
@@ -40,4 +47,23 @@ all.bmi.compare <- otu_abundance_compare(otu.normed, meta, "bmi_group", "NW", "O
 ## alpha_diversity_calc.R   
 div.table=alpha_diversity_calc(otu.counts, meta$study_id, meta$bmi_group)
 div.mean.sd = otu_abundance_compare(div.table, meta, "bmi_group", "NW", "Ob")
+
+# **************************************************************************** #
+# ***************                   category2pathway.R                         #
+# **************************************************************************** #
+
+# Reduce COG genes to COG pathways
+df.wgs.pathway.counts=category2pathway(wgs.counts,category2pathway.cog)
+
+# **************************************************************************** #
+# ***************             poison_regression_permute.R                      #
+# **************************************************************************** #
+
+# Input Parameters (need to change the groupings to be consistent with paper!)
+wgs.pathways=df.wgs.pathway.counts
+n.total=11
+n.gr1=6
+n.gr2=5
+twin.wgs.pathway.fit=poison_regression_permute(wgs.pathways,n.total,n.gr1,n.gr2)
+
 
