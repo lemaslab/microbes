@@ -8,7 +8,7 @@
 # **************************************************************************** #
 
 poison_regression_permute <- function(wgs_path_count, n.total, n.gr1, n.gr2) {
-  # Libraries
+
   
   # Start the clock!
   ptm <- proc.time()
@@ -34,13 +34,17 @@ poison_regression_permute <- function(wgs_path_count, n.total, n.gr1, n.gr2) {
 # save pvalue in matrix PVALUES
 
 	PVALUES <- NULL
+  BETAS   <- NULL    #new
+  tot <- apply(data2,MARGIN=2,sum)     #new
+
 	for(i in 1:nrow(data2))
 	{
-		ans <- summary(glm(data2[i,] ~ Y, family=poisson(link = "log")))
+	  ans <- summary(glm(data2[i,] ~ Y, family=poisson(link = "log"), offset=log(tot))) #modified
 		obs.LRTS <- ans$null.deviance - ans$deviance
+		BETAS <- c(BETAS,ans$coefficients[2,1])      #new
 
 		perm.LRTS <- apply(permY, MARGIN=1, function(x) {		
-					 ans <- summary(glm(data2[i,] ~ x, family=poisson(link = "log")))
+		    ans <- summary(glm(data2[i,] ~ x, family=poisson(link = "log"), offset=log(tot))) #modified
 		                   ans$null.deviance - ans$deviance })
 
 		PVALUES <- c(PVALUES, mean(perm.LRTS >= obs.LRTS))
@@ -51,14 +55,17 @@ stop=c(proc.time() - ptm)
 stop[1]
 
 # Email Notification
-# message.detail=paste("Calculation finished. Total Run Time: ",round(stop[1],digits=2)," seconds",sep="")
+#message.detail=paste("Calculation finished. Total Run Time: ",round(stop[1],digits=2)," seconds",sep="")
 #email.notification=sendmail(email, subject="Notification from R: poison_regression_permute complete", 
 #               message=message.detail, password="rmail")
 
   # Combine P.values with counts
-  return(wgs_path_count.new=cbind(wgs_path_count,PVALUES))
+  return(wgs_path_count.new=cbind(wgs_path_count,BETAS,PVALUES))
 
   # Send email notification
-  # return(email.notification)
+#  return(email.notification)
 
 } # End of Function
+
+
+
