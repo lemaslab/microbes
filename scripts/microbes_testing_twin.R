@@ -1,3 +1,7 @@
+## Updated 05Feb15
+
+rm(list = ls())
+
 library(devtools)
 install_github("dlemas/microbes")
 library(microbes)
@@ -66,4 +70,16 @@ n.gr1=6
 n.gr2=5
 twin.wgs.pathway.fit=poison_regression_permute(wgs.pathways,n.total,n.gr1,n.gr2)
 
+# **************************************************************************** #
+# ***************                   dissim_compare.R                    #
+# **************************************************************************** #
 
+# Measure the Morisita Horn distance between participants
+
+d.index <- dissim_compare(otu.normed, meta, "bmi_group", "lean", "obese")
+dissim_graph(d.index)
+
+meta.fake <- meta ## I am making a fake data frame to compare twins by pairs
+meta.fake$pairs <- c("a","b","a","b","a","b","a","b", "a","b","a","b")
+d.pair.index <- dissim_pair_compare(otu.normed, meta.fake, "pairs", "a", "b")
+dissim_pair_graph(d.pair.index)
