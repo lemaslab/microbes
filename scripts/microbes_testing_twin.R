@@ -1,3 +1,4 @@
+library(devtools)
 install_github("dlemas/microbes")
 meta <- twin_meta
 otu.counts <- twin_otu_class_green
