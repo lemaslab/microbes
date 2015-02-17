@@ -1,12 +1,14 @@
-<<<<<<< HEAD
-=======
+
 ## Updated 05Feb15
+
+setwd("C:/Users/lemasd/Documents/GitHub/microbes")
+
 
 rm(list = ls())
 
->>>>>>> 63143508a59a58040883711b23dcd28518b519b8
 library(devtools)
 install_github("dlemas/microbes")
+load_all()
 library(microbes)
 
 # Twin Study Data
@@ -49,7 +51,13 @@ otu.normed <- prevalence_crop(otu.normed, 0.2) ## removed 5
 otu.normed <- abundance_crop(otu.normed, 0.001) ## removed 3
 
 ## Relative Abundance Comparision   
-all.bmi.compare <- otu_abundance_compare(otu.normed, meta, "bmi_group", "NW", "Ob")
+otu.normed
+meta
+grouping_variable="bmi_group"
+group_a="lean"
+group_b="obese"
+
+all.bmi.compare <- otu_abundance_compare(otu.normed, meta, "bmi_group", "lean", "Obese")
 
 ## alpha_diversity_calc.R   
 div.table=alpha_diversity_calc(otu.counts, meta$study_id, meta$bmi_group)
