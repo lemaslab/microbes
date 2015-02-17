@@ -66,4 +66,3 @@ n.gr1=6
 n.gr2=5
 twin.wgs.pathway.fit=poison_regression_permute(wgs.pathways,n.total,n.gr1,n.gr2)
 
-
