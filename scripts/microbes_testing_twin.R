@@ -1,14 +1,15 @@
 
-## Updated 05Feb15
-
-setwd("C:/Users/lemasd/Documents/GitHub/microbes")
-
-
 rm(list = ls())
 
+
+# Testing local repo
+setwd("C:/Users/lemasd/Documents/GitHub/microbes")
+library(devtools)
+load_all()
+
+# Testing github repo
 library(devtools)
 install_github("dlemas/microbes")
-load_all()
 library(microbes)
 
 # Twin Study Data
@@ -51,11 +52,11 @@ otu.normed <- prevalence_crop(otu.normed, 0.2) ## removed 5
 otu.normed <- abundance_crop(otu.normed, 0.001) ## removed 3
 
 ## Relative Abundance Comparision   
-otu.normed
-meta
-grouping_variable="bmi_group"
-group_a="lean"
-group_b="obese"
+# otu.normed
+# meta
+# grouping_variable="bmi_group"
+# group_a="lean"
+# group_b="obese"
 
 all.bmi.compare <- otu_abundance_compare(otu.normed, meta, "bmi_group", "lean", "Obese")
 
