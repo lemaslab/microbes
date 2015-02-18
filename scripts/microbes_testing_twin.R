@@ -1,4 +1,6 @@
 
+# Updated 18Feb15: group_compare.R
+
 rm(list = ls())
 
 
@@ -52,32 +54,12 @@ otu.normed <- prevalence_crop(otu.normed, 0.2) ## removed 5
 otu.normed <- abundance_crop(otu.normed, 0.001) ## removed 3
 
 ## Relative Abundance Comparision   
-<<<<<<< HEAD
-otu.normed
-meta
-str(meta)
-grouping_variable=meta$bmi_group
-library_id=meta$study_id
+# New group compare function
+all.bmi.compare <- group_compare(otu.normed, meta, meta$study_id, meta$bmi_group)
 
-dfx <- data.frame(
-  group = c(rep('A', 8), rep('B', 15), rep('C', 6)),
-  sex = sample(c("M", "F"), size = 29, replace = TRUE),
-  age = runif(n = 29, min = 18, max = 54)
-)
-
-test=ddply(dfx, .(sex), summarize, mean = round(mean(age), 2), sd = round(sd(age), 2))
-
-
-all.bmi.compare <- group_compare(otu.normed, meta, "bmi_group", "lean", "Obese")
-=======
-# otu.normed
-# meta
-# grouping_variable="bmi_group"
-# group_a="lean"
-# group_b="obese"
->>>>>>> 5e1ceb1f1b010f45b55774d9b8dc9e16f4d21da4
-
+# old group compare function
 all.bmi.compare <- otu_abundance_compare(otu.normed, meta, "bmi_group", "lean", "Obese")
+
 
 ## alpha_diversity_calc.R   
 div.table=alpha_diversity_calc(otu.counts, meta$study_id, meta$bmi_group)
