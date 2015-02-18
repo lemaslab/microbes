@@ -53,9 +53,20 @@ otu.normed <- abundance_crop(otu.normed, 0.001) ## removed 3
 ## Relative Abundance Comparision   
 otu.normed
 meta
-grouping_variable="bmi_group"
-group_a="lean"
-group_b="obese"
+str(meta)
+grouping_variable=meta$bmi_group
+library_id=meta$study_id
+
+dfx <- data.frame(
+  group = c(rep('A', 8), rep('B', 15), rep('C', 6)),
+  sex = sample(c("M", "F"), size = 29, replace = TRUE),
+  age = runif(n = 29, min = 18, max = 54)
+)
+
+test=ddply(dfx, .(sex), summarize, mean = round(mean(age), 2), sd = round(sd(age), 2))
+
+
+all.bmi.compare <- group_compare(otu.normed, meta, "bmi_group", "lean", "Obese")
 
 all.bmi.compare <- otu_abundance_compare(otu.normed, meta, "bmi_group", "lean", "Obese")
 
