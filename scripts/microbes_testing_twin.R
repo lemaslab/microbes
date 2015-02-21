@@ -1,4 +1,6 @@
 
+# Updated 18Feb15: group_compare.R
+
 rm(list = ls())
 
 
@@ -52,13 +54,12 @@ otu.normed <- prevalence_crop(otu.normed, 0.2) ## removed 5
 otu.normed <- abundance_crop(otu.normed, 0.001) ## removed 3
 
 ## Relative Abundance Comparision   
-# otu.normed
-# meta
-# grouping_variable="bmi_group"
-# group_a="lean"
-# group_b="obese"
+# New group compare function
+all.bmi.compare <- group_compare(otu.normed, meta, meta$study_id, meta$bmi_group)
 
+# old group compare function
 all.bmi.compare <- otu_abundance_compare(otu.normed, meta, "bmi_group", "lean", "Obese")
+
 
 ## alpha_diversity_calc.R   
 div.table=alpha_diversity_calc(otu.counts, meta$study_id, meta$bmi_group)
