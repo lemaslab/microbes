@@ -47,7 +47,12 @@ gene2path=function(wgs.counts, functional.map, path.level){
     path.count=as.numeric(apply(path.gene.counts, 2, sum)) 
     PATH.TABLE[i,]=c(col,path.count)  
   } # End of loop  
-  return(PATH.TABLE)
+  
+  row.names(PATH.TABLE)=PATH.TABLE[,1]
+  PATH.TABLE=PATH.TABLE[,-1]
+  path.numeric=as.data.frame(sapply(PATH.TABLE,function(x) as.numeric(x)))
+  
+  return(path.numeric)
 } # End of function
 
 
