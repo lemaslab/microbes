@@ -44,7 +44,7 @@ gene2path=function(wgs.counts, functional.map, path.level){
     which.row=which(row.names(participant.gene.count)%in%pathway.annot)
     part.number=length(participant.gene.count)
     path.gene.counts=participant.gene.count[which.row,]  
-    path.count=apply(path.gene.counts, 2, sum) 
+    path.count=as.numeric(apply(path.gene.counts, 2, sum)) 
     PATH.TABLE[i,]=c(col,path.count)  
   } # End of loop  
   return(PATH.TABLE)
