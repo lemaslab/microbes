@@ -58,7 +58,7 @@ otu.normed <- abundance_crop(otu.normed, 0.001) ## removed 3
 all.bmi.compare <- group_compare(otu.normed, meta, meta$study_id, meta$bmi_group)
 
 # old group compare function
-all.bmi.compare <- otu_abundance_compare(otu.normed, meta, "bmi_group", "lean", "Obese")
+all.bmi.compare2 <- otu_abundance_compare(otu.normed, meta, "bmi_group", "lean", "Obese")
 
 
 ## alpha_diversity_calc.R   

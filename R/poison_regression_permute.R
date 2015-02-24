@@ -16,7 +16,9 @@ poison_regression_permute <- function(wgs_path_count, n.total, n.gr1, n.gr2) {
   ptm <- proc.time()
 
   # Process the data
-  df.pathway.new=wgs_path_count[,-1]
+  # df.pathway.new=wgs_path_count[,-1]
+  df.pathway.new=wgs_path_count
+  
   rownames(df.pathway.new)=NULL
   colnames(df.pathway.new)=NULL
   data2=data.matrix(df.pathway.new)
