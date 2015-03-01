@@ -5,8 +5,8 @@ rm(list = ls())
 
 
 # Testing local repo
-setwd("C:/Users/lemasd/Documents/GitHub/microbes")
-library(devtools)
+# setwd("C:/Users/lemasd/Documents/GitHub/microbes")
+# library(devtools)
 load_all()
 
 # Testing github repo
@@ -16,7 +16,9 @@ library(microbes)
 
 # Twin Study Data
 meta <- twin_meta
-otu.counts <- twin_otu_class_green
+otu.phylum <- twin.18mz.phylum
+otu.family <- twin.18mz.family
+otu.genus <- twin.18mz.genus
 wgs.counts <- twin.wgs.18mz.ko.l4
 
 #####################################################################################################
