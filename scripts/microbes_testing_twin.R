@@ -1,5 +1,5 @@
 
-# Updated 18Feb15: group_compare.R
+# Updated 28Feb15: twin.ko.data
 
 rm(list = ls())
 
@@ -17,11 +17,7 @@ library(microbes)
 # Twin Study Data
 meta <- twin_meta
 otu.counts <- twin_otu_class_green
-wgs.counts <- twin_wgs_L4_cog
-
-# COG Pathway File (need to change name in Data directory so names match: currently COG_Pathway_File)
-# also need to identify if there are R packages or other resources we can use as pathway key.
-category2pathway.cog
+wgs.counts <- twin.wgs.18mz.ko.l4
 
 #####################################################################################################
 ################################        Checking data format         ################################
