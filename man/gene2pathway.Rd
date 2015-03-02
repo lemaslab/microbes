@@ -3,7 +3,7 @@
 
 \title{gene2pathway}
 \description{[TEXT]}
-\usage{gene2path=function(wgs.counts, functional.map, path.level)}
+\usage{gene2pathway=function(wgs.counts, functional.map, path.level)}
 \arguments{
   \item{counts}{[TEXT]}
   \item{functional.map}{[TEXT]}

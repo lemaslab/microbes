@@ -12,7 +12,7 @@
 #'   cogpathway=path.file
 #'   path.test.ko2=gene2path(ko.L4.baby.2, ko.map, 2)
 #'   
-gene2path=function(wgs.counts, functional.map, path.level){
+gene2pathway=function(wgs.counts, functional.map, path.level){
   
   # navigate path level
   func.map=functional.map[path.level]
