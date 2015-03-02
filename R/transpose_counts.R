@@ -25,8 +25,10 @@ transpose_counts <- function(otu.counts) {
   ## move study_id to row.names
   row.names(otu.counts.t) <- otu.counts.t$library_id
   otu.counts.new <- otu.counts.t[,-1]
-  A=moveme(otu.counts.new,"first")
+  last.col.no=dim(otu.counts.new)[2]
+  second.last.col.no=last.col.no-1
+  A=otu.counts.new[c(last.col.no,1:second.last.col.no)]
   
-return(output)}
+return(A)}
 
 
