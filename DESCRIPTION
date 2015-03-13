@@ -9,7 +9,8 @@ Description: More about what it does (maybe more than one line)
 URL: https://github.com/dlemas/microbes
 Depends:
     vegan,
-	gtools
+	gtools,
+	plyr
 Suggests:    
 License: NA
 LazyData: true

@@ -3,19 +3,15 @@
 ##' This function creates a data frame with alpha diversity estimates calculated for 
 ##' each sample.
 ##' @param otu_table data frame with 16s counts
-##' @param study_id vector that contains study id
-##' @param study_group vector that contains syudy groups
 ##' @keywords alpha diversity
 ##' @export
 ##' @examples
 ##' # Simulated data 
 ##'   head( )
-##'   alpha_diversity_calc(otu.species.sort, meta.grp.sort$study_id, meta.grp.sort$bmi_group)
+##'   alpha_diversity_calc(otu.species.sort)
 
-alpha_diversity_calc <- function(otu_table, study_id, study_group) {
+alpha_diversity_calc <- function(otu_table) {
   #otu_table <- otu.counts 
-  #study_id <- meta$study_id
-  #study_group<- meta$bmi_group
   
   
 #library("vegan")
@@ -41,9 +37,10 @@ alpha_diversity_calc <- function(otu_table, study_id, study_group) {
 
 # How many participants?
 
-index=as.character(study_id);index 
-myIndex<-length(index);myIndex 
+# How many participants?
 
+index=as.character(names(otu_table));index 
+myIndex<-length(names(otu_table));myIndex 
 
 # **************************************************************************** #
 # ***************                 Start Loop                   *************** #
@@ -82,10 +79,5 @@ TABLE2 = setNames(data.frame(t(TABLE1[,-1])), TABLE1[,1])
 return(TABLE2)
 #group=as.numeric(meta_sort_group)
 #table.grp=cbind(TABLE1,group)
-
-#**********This code could be added in to have study_group part of the function
-#table.grp=cbind(TABLE1,study_group)
-#table.grp.sort <- table[order(table.grp$study_group),]
-#return(table.grp.sort)
 
 } # End function

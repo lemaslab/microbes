@@ -5,7 +5,6 @@
 \usage{
 meta_ID_match(data, otu)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{data}{metadata or any other data frame with a participant ID column}
   \item{otu}{otu.normed, otu.counts or any other data frame with a participant ID column}
