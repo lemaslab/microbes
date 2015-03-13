@@ -19,8 +19,11 @@ library(devtools)
 library(ggplot2)
 library(reshape)
 
-setwd("C:/Users/tomczika/Documents/GitHub/microbes")
-load_all()
+#setwd("C:/Users/tomczika/Documents/GitHub/microbes")
+#load_all()
+install_github("atomczik/microbes")
+library(microbes)
+
 
 #####################################################################################################
 ##########################                Analysis                         ##########################
