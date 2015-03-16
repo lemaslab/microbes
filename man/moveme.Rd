@@ -22,6 +22,7 @@
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
+<<<<<<< HEAD
 moveme <- function (invec, movecommand) {
   movecommand <- lapply(strsplit(strsplit(movecommand, ";")[[1]], 
                                  ",|\\s+"), function(x) x[x != ""])
@@ -55,6 +56,8 @@ moveme <- function (invec, movecommand) {
   myVec
 } # End Function
 
+=======
+>>>>>>> b64c95e3bf92eabe14cf435fb02ef6406bbc51b1
 }
 
 \keyword{ moveme }

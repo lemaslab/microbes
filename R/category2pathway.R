@@ -41,6 +41,22 @@ for (i in 1:(myIndex))
   path.gene.counts=participant.gene.count[which.row,]  
   path.count=apply(path.gene.counts, 2, sum) 
   PATH.TABLE[i,]=c(col,path.count)  
-} # End of loop  
+} # End of loop 
+
+
+############################ Added by Angela 05Mar15 ############################
+## Make pathway names the rownames (important for normalize.counts)
+row.names(PATH.TABLE) <- PATH.TABLE$pathway
+## Delete rid of pathway column
+PATH.TABLE <- PATH.TABLE[,-1]
+n <- (length(PATH.TABLE))
+for (i in 1:n )  {PATH.TABLE[,i] <- as.numeric(PATH.TABLE[,i])}
+#################################################################################
+
+
+
 return(PATH.TABLE)
+
+
+
 } # End of function
