@@ -1,7 +1,7 @@
 \name{abund_stack_graph}
 \alias{abund_stack_graph}
-\title{[TEXT]}
-\description{[TEXT]}
+\title{Relative Abundance Stacked Bar Graph}
+\description{This function is used to graph otu.normed for a two group comparison.}
 \usage{
 abund_stack_graph(df2)
 }
