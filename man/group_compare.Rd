@@ -124,13 +124,6 @@ group_compare <- function(otu.normed, meta, library_id, grouping_variable) {
   
   
   return(TABLE2)
-<<<<<<< HEAD
-} 
-
-\keyword{ [text] }
-\keyword{ [text] }
-=======
 } }
 
 \keyword{TEXT}
->>>>>>> b64c95e3bf92eabe14cf435fb02ef6406bbc51b1

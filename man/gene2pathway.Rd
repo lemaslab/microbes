@@ -50,13 +50,8 @@ gene2path=function(wgs.counts, functional.map, path.level){
     # Create column index
     col=index[i];col
     pathway.annot=pathway.file[[i]]
-<<<<<<< HEAD
-    path.annot.match=row.names(participant.gene.count)%in%pathway.annot
-    which.row=which(row.names(participant.gene.count)%in%pathway.annot)
-=======
     path.annot.match=row.names(participant.gene.count)
     which.row=which(row.names(participant.gene.count))
->>>>>>> b64c95e3bf92eabe14cf435fb02ef6406bbc51b1
     part.number=length(participant.gene.count)
     path.gene.counts=participant.gene.count[which.row,]  
     path.count=apply(path.gene.counts, 2, sum) 
