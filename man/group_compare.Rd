@@ -1,7 +1,7 @@
 \name{group_compare}
 \alias{group_compare}
-\title{This function compares the relative abundance for each bug by study group}
-\description{[text]}
+\title{Compare the OTU abundance by study group}
+\description{ This function compares df.counts or df.ra by study group}
 \usage{
 group_compare <- function(otu.normed, meta, library_id, grouping_variable)
 }
@@ -15,26 +15,13 @@ group_compare <- function(otu.normed, meta, library_id, grouping_variable)
   \item{grougrouping_variablep_a}{
 [text]}
 }
-\details{
-[text]}
-\value{
-[text]
-}
-\references{
-[text]}
-\author{
-[text]}
-\note{
-[text]}
+\details{The grouping variable must contain exactly two values.}
+\value{ The output is a data frame with rows consisting of the OTU name; the mean/sd for each grouping_variable; and the p.value of a Wilcoxon Rank sum test between the groups.}
+\references{Wilcoxon Rank Sum Test}
+\author{atomczik}
 
 
-\seealso{
-[text]}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
 ## The function is currently defined as
 group_compare <- function(otu.normed, meta, library_id, grouping_variable) {
   

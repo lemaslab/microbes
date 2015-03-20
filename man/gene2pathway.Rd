@@ -2,7 +2,7 @@
 \alias{gene2pathway}
 
 \title{gene2pathway}
-\description{[TEXT]}
+\description{This function converts}
 \usage{gene2pathway=function(wgs.counts, functional.map, path.level)}
 \arguments{
   \item{counts}{[TEXT]}

@@ -1,21 +1,16 @@
 \name{wgs_function}
 \alias{wgs_function}
-\title{[TEXT]}
-\description{[TEXT]}
+\title{[Compiled wgs analyisis}
+\description{this function reformats WGS data to prepare it for analyisis}
 \usage{
 wgs_function(df, pathway.file)
 }
 \arguments{
-  \item{df}{[TEXT]}
-  \item{pathway.file}{[TEXT]}
+  \item{df}{wgs.counts or wgs.ra}
+  \item{pathway.file}{A file referencing the pathway category to which each cog belongs}
 }
-\details{[TEXT]}
-\value{[TEXT]
-}
-\references{[TEXT]}
+
 \author{atomczik}
-\note{[TEXT]}
-\seealso{[TEXT]}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -33,5 +28,5 @@ function (df, pathway.file)
   }
 }
 
-\keyword{ [TEXT] }
+\keyword{ cog }
 

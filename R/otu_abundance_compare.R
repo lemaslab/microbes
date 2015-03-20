@@ -1,24 +1,24 @@
 ' Comparing two groups of data using a t-test and a Wilcoxon Rank Sum Test. 
 #'
 #' This function compares two sets of data using a Wilcoxon Rank Sum Test and a T-Test.
-#' @param df is otu.ra
+#' @param df is otu.normed
 #' @keywords Wilcoxon
 #' @export
 #' @examples
-#' group2_compare()
+#' otu_abundance_compare()
 
 # **************************************************************************** #
 # ***************              START FUNCTION                  *************** #
 # **************************************************************************** #
 
-group2_compare <- function(otu.ra, meta, grouping_variable, group_a, group_b) {
+otu_abundance_compare <- function(otu.normed, meta, grouping_variable, group_a, group_b) {
   
   
   
-  otu.ra.t = setNames(data.frame(t(otu.ra[,])), row.names(otu.ra))
-  otu.ra.t$study_id <-row.names(otu.ra.t)
+  otu.normed.t = setNames(data.frame(t(otu.normed[,])), row.names(otu.normed))
+  otu.normed.t$study_id <-row.names(otu.normed.t)
   meta.grp= meta[c("study_id", grouping_variable)]
-  merged.data <- merge( meta.grp, otu.ra.t, by="study_id")
+  merged.data <- merge( meta.grp, otu.normed.t, by="study_id")
   
   
   

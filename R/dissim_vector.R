@@ -7,7 +7,7 @@
 #meta
 #same <- c("sample.Twin_Mother","sample.Family", "sample.zygosity" )
 #different <- c("sample.sample_id")
-#test <- MH_sim(otu.normed, meta, same, different)
+#test <- dissim_vector(otu.normed, meta, same, different)
 #length(test)
 #length(unlist(test))
 
@@ -21,7 +21,7 @@ library(fossil)
 #######################    Iputs     ##############################
 ###################################################################
 
-MH_sim <- function(otu.normed, meta, same, different){
+dissim_vector <- function(otu.normed, meta, same, different){
   
 ###################################################################
 ###In case same or different are empty, we make fake values #######
@@ -98,28 +98,28 @@ df.subset <- df[,q:p]
 
 ## Add in the sample.itelf at the beginning to delete later
 ## This is in case df.subset is empty.
-## putting it in the beginning it will always be simil[1]
+## putting it in the beginning it will always be dissim[1]
 df.subset<- rbind(sample.itself, df.subset)
 
-## calulate simil
-simil <- "blank"
+## calulate dissim
+dissim <- "blank"
 r <- length(row.names(df.subset))
-for (l in 1:r){ simil[l] <- morisita.horn(sample.itself, df.subset[l,])}
-simil <- simil[-1]
-out[i]<- list(simil)
-simil.vector <- unlist(out)
+for (l in 1:r){ dissim[l] <- morisita.horn(sample.itself, df.subset[l,])}
+dissim <- dissim[-1]
+out[i]<- list(dissim)
+dissim.vector <- unlist(out)
 
 
 ############ This is the line that causes all of the WARNINGS !!!!!! ###############
-simil.vector <- suppressWarnings(as.numeric(simil.vector))
+dissim.vector <- suppressWarnings(as.numeric(dissim.vector))
 ####################################################################################
 
-simil.vector <- as.numeric(sort(simil.vector))
-simil.vector <- as.numeric(simil.vector[c(TRUE,FALSE)])
+dissim.vector <- as.numeric(sort(dissim.vector))
+dissim.vector <- as.numeric(dissim.vector[c(TRUE,FALSE)])
 }
 
 
-return(simil.vector) }
+return(dissim.vector) }
 
 
 

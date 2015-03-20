@@ -14,12 +14,10 @@ meta_ID_match(data, otu)
 \value{
 The output is a list of 'study_id's that match between the two inputs
 }
-\references{
-no references}
+
 \author{
 atomczik}
-\note{
-no further notes}
+
 
 
 \seealso{meta_ID_error}

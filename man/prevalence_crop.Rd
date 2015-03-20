@@ -1,37 +1,20 @@
 \name{prevalence_crop}
 \alias{prevalence_crop}
-\title{
-[text]}
-\description{
-[text]}
+\title{ Subset dataset by minimum OTU prevalence}
+\description{Subset df.counts or df.ra by a selected minimum prevalence level.}
 \usage{
-prevalence_crop(df, x)
-}
+prevalence_crop(df, x)}
 \arguments{
-  \item{df}{
-[text]}
-  \item{x}{
-[text]}
-}
-\details{
-[text]}
-\value{
-[text]
-}
-\references{
-[text]}
-\author{
-[text]}
-\note{
-[text]}
+  \item{df}{df.counts or df.normed}
+  \item{x}{Desired minimum prevalence level}}
+\details{This function works best with df.ra}
+\value{The output is a subset of the original data frame with the same formatting.}
+
+\author{atomczik}
 
 
-\seealso{
-[text]}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+
 
 ## The function is currently defined as
 function (df, x) 

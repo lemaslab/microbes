@@ -1,22 +1,22 @@
 \name{abundance_crop}
+
 \alias{abundance_crop}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{This function crops the data to include only bugs that make up a significant amount of the microbiome.}
-\description{This function takes the data frame (df) and eliminates all rows that average to less that x}
-\usage{
-abundance_crop(df, x)
-}
-%- maybe also 'usage' for other objects documented here.
+
+\title{Subset data frame by minimum mean abundance}
+
+\description{This function subsets df.counts to include only bugs that make up a selected amount of the microbiome. This function takes the data frame (df) and eliminates all rows that average to less that x}
+
+\usage{abundance_crop(df, x)}
+
 \arguments{
-  \item{df}{otu.normed or any data frame with all numeric entries}
-  \item{x}{a number between 0 and 1}
-}
-\details{df must have labels only in row.names and column names}
-\value{Output is a data frame in the same form as the orginal input.
-}
-\references{no references}
+  \item{df}{df.normed or any data frame with all numeric entries between 0 and 1.}
+  \item{x}{a number between 0 and 1}}
+
+\details{df must have labels only in row.names and column names. All other entries must be numeric and between 0 and 1.}
+
+\value{The output from this function is a a subset of the original data frame with consistent formatting.}
+
 \author{atomczik}
-\note{no further notes}
 
 
 \seealso{prevalence_crop}
@@ -40,3 +40,5 @@ function (df, x)
 
 \keyword{ ~crop }
 \keyword{ ~abundance }
+\keyword{ ~subset }
+

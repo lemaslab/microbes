@@ -1,11 +1,13 @@
 Package: microbes
 Type: Package
-Title: tools for analyzing microbiome data
+Title: Tools for analyzing microbiome data
 Version: 0.0.1
 Date: 2015-01-07
 Author: Dominick Lemas <dominicklemas@gmail.com>, Angela Tomczik <Angela.Tomczik@Colorado.EDU>
 Maintainer: Dominick Lemas <dominicklemas@gmail.com>
-Description: More about what it does (maybe more than one line)
+Depends: R(>=3.1.0)
+Description: microbes contains a set of tools
+to assist in the the import, formatting and analysis of taxonomic and metagenomic micro biome data for multi-variate and longitudinal studies.
 URL: https://github.com/dlemas/microbes
 Depends:
     vegan,
