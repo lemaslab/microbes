@@ -1,14 +1,22 @@
 \name{cog_cv_ra}
+
 \alias{cog_cv_ra}
+
 \title{Cog Core/Variable and Relative Abundance}
-\description{This function classifies each cog into "core" or "variable" categories. "Core" is defined as any cog that is in 100 percent of particiants. "Variable" is defined as any cog that is in less than 100 percent of participants.}
+
+\description{This function classifies each cog into "core" or "variable" categories.}
+
+\details{"Core" is defined as any cog that is in 100 percent of participants. "Variable" is defined as any cog that is in less than 100 percent of participants.}
+
 \usage{cog_cv_ra(df)}
-\arguments{ \item{df}{ the input is a dataframe with the column names participants and the row names cogs.}}
-\details{no additional details}
+
+\arguments{ \item{df}{ the input is a data-frame with the column names participants and the row names cogs.}}
+
 \value{The output is a data frame with three columns. The first column is the cog name, the second column classifies the cog by "core" or "variable" and the}
+
 \references{http://www.ncbi.nlm.nih.gov/pubmed/19043404}
+
 \author{atomczik}
-\note{no further notes}
 
 
 \seealso{ see also cog.path.ref}

@@ -1,7 +1,11 @@
 \name{heatmap_black}
+
 \alias{heatmap_black}
+
 \title{Geom_tile Graph}
+
 \description{This function returns a geom_tile graph with color indicating positive/negative and shading indicating the magnitude of the value.}
+
 \usage{heatmap_black(df, xvar, yvar, zvar, pvar, p)}
 \arguments{
   \item{df}{ A dataframe containing the information to be graphed with variable names in the column names.}
@@ -14,14 +18,10 @@
 \value{the output is a tile-graph with zvar defining the magnitude/direction of the tile colors.}
 \references{ no additional references}
 \author{atomczik}
-\note{ no further notes}
 
 
-\seealso{ no additional code}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+
 
 ## The function is currently defined as
 function (df, xvar, yvar, zvar, pvar, p) 

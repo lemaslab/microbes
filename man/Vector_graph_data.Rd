@@ -6,14 +6,10 @@
 \arguments{
   \item{vectors}{List of vector names already in Global Environment}
 }
-\details{[TEXT]}
-\value{[TEXT]}
-\references{[TEXT]}
+\details{This function compiles numeric vectors into short format for ggplot graphing}
+\value{the output is a data frame containing the names of the input vectors, matched with the values of the input vectors.}
 \author{atomczik}
-\note{[TEXT]}
 
-
-\seealso{[TEXT]}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -36,4 +32,4 @@ function (vectors)
   }
 }
 
-\keyword{[TEXT]}
+\keyword{vector}

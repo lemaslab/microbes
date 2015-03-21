@@ -13,12 +13,8 @@ heatmap_no_black(df, xvar, yvar, zvar, pvar, p)}
   \item{p}{The maximum p.value for one of the yvar variables to be colored on the graph. All other yvar varibles will occur white in the graph.}}
 \details{no additional details}
 \value{the output is a tile-graph with zvar defining the magnitude/direction of the tile colors.}
-\references{ no additional references}
 \author{atomczik}
-\note{ no further notes}
 
-
-\seealso{ no additional code}
 
 \examples{
 ##---- Should be DIRECTLY executable !! ----

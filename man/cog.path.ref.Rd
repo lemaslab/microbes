@@ -1,23 +1,21 @@
 \name{cog.path.ref}
 \alias{cog.path.ref}
 \title{ cog/pathway reference}
-\description{This function makes a list of all cog/pathway combinations}
+\description{Convert the cog.pathway file to a list of cog/pathway combinations}
 \usage{cog.path.ref(pathway.file)}
 \arguments{
-  \item{pathway.file}{This file contains a list vectors. The name of the vector is the pathway and the elements of the vector are the cogs found in that pathway}}
-\details{No details}
-\value{The output is a list of cog/pathway comnbinations}
-\references{No references}
+  \item{pathway.file}{This file contains a list of vectors. The name of the vector is the pathway and the elements of the vector are the cogs found in that pathway}}
+
+
+\details{This function simply reformats the cog.pathway file for ease of use for future analysis}
+
+
+\value{The output is a data frame with each row being a unique cog/pathway combination.}
 \author{atomczik}
-\note{no further notes}
 
 
 \seealso{ cog_cv_ra}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
 ## The function is currently defined as
 function (pathway.file) 
 {
