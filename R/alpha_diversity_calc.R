@@ -1,4 +1,18 @@
-## updated 19Mar15 atomczik
+##' Calculate alpha diversity measures for each sample.
+##' 
+##' This function creates a data frame with alpha diversity estimates calculated for 
+##' each sample.
+##' @param otu_table data frame with 16s counts
+##' @keywords alpha diversity
+##' @export
+##' @examples
+##' # Simulated data 
+##'   head( )
+##'   alpha_diversity_calc(otu.species.sort)
+
+alpha_diversity_calc <- function(otu_table) {
+  #otu_table <- otu.counts 
+  
   
 #library("vegan")
   
@@ -20,7 +34,11 @@
 # ***************                 Loop Index                   *************** #
 # **************************************************************************** #
 
+
 # How many participants?
+
+# How many participants?
+
 index=as.character(names(otu_table));index 
 myIndex<-length(names(otu_table));myIndex 
 
@@ -34,8 +52,7 @@ for (i in 1:myIndex)
   #names(otu_table)
   
   
-  ##These are some of the functions to choose from.
-  ## Functions can be added or deleted here, but must also be added below as well.
+  #Functions
   shannon= diversity(otu_table[,col], index = "shannon", MARGIN = 1, base = exp(1))
   simpson= diversity(otu_table[,col], index = "simpson", MARGIN = 1, base = exp(1))
   invsimpson= diversity(otu_table[,col], index = "invsimpson", MARGIN = 1, base = exp(1))
@@ -43,11 +60,10 @@ for (i in 1:myIndex)
   diversity= diversity(otu_table[,col])
   renyi=renyi(otu_table[,col])[[11]]
 
-  ## Bind variables
-  ## This puts together the variables that are going to be in the df output.
+  # Bind variables
   continuous_block=cbind(col, shannon, simpson,invsimpson, fisherfit, diversity, renyi);continuous_block
      
-  ## Create a blank df for the diversity measures
+  # Add to data.frame
   TABLE1[i,1]=col
   TABLE1[i,2]=shannon
   TABLE1[i,3]=simpson
@@ -59,13 +75,8 @@ for (i in 1:myIndex)
   
 } 
 
-## Transpose the data frame to have study_id as the column names.
 TABLE2 = setNames(data.frame(t(TABLE1[,-1])), TABLE1[,1])
-
-## output
 return(TABLE2)
-
-## I'm not sure why this code was left in here, but could likely be deleted.
 #group=as.numeric(meta_sort_group)
 #table.grp=cbind(TABLE1,group)
 
