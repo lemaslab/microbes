@@ -1,25 +1,26 @@
 \name{dissim_vector}
 \alias{dissim_vector}
 \title{Morisita-Horne Similarity Combination Function}
-
 \description{This function calculates the Morisita-Horne similarity between samples that meet the given requirements.}
 \usage{dissim_vector(otu.normed, meta, same, different)}
-
 \arguments{
-  \item{otu.normed}{ df.ra with study_id  and OTU names as the column names and row names respectively.}
-  \item{meta}{ Metadata data frame with variable names in the column name position.}
+  \item{otu.normed}{ Data frame of normalized OTU counts with study_id as the column names and OTU names as the row.names.}
+  \item{meta}{ Data Frame of metadata.}
   \item{same}{ A vector containing the names of the metadata columns that are to be the same.}
   \item{different}{A vector containing the names of the metadata columns that are to be different.}}
-
-\details{The out.normed entry should be subset to only look that the relevant participants before being input into the function. For example, if the desired outcome is the similarity between women of the same age of different race, then the initial data frame needs to be subset to include only women, same=“race” and different=“race”. The output is a numeric vector. }
-
-\value{The returned output is a vector containing the Morisita-Horne Simmilarity between all sample pairs that meet the above restrictions.}
-
+\details{ no additional details}
+\value{ The returned output is a vector containing the Morisita-Horne Simmilarity between all sample pairs that meet the above restrictions.
+}
 \references{http://www.ncbi.nlm.nih.gov/pubmed/19043404}
-
 \author{atomczik}
+\note{no further notes}
 
+
+\seealso{no additional links}
 \examples{
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
 function (otu.normed, meta, same, different) 
