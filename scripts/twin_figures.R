@@ -14,6 +14,14 @@ otu.family <- twin.18mz.family
 otu.genus <- twin.18mz.genus
 wgs.counts <- twin.wgs.18mz.ko.l4
 
+A=transpose_counts(otu.phylum)
+str(A)
+
+x=c("yellow","red","blue","green")
+
+A=combn(x,2)
+
+
 
 # plot taxa
 #

@@ -29,6 +29,7 @@ transpose_counts <- function(otu.counts) {
   second.last.col.no=last.col.no-1
   A=otu.counts.new[c(last.col.no,1:second.last.col.no)]
   
+  
 return(A)}
 
 
