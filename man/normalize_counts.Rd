@@ -6,15 +6,14 @@
 normalize_counts(otu_count)
 }
 \arguments{
-  \item{otu_count}{A data frame including the raw counts for each bug and particpant.}
+  \item{otu_count}{A data frame including the raw counts for each bug and participant.}
 }
 \details{no further details}
 \value{
 The output is a data frame in the same format as the input.
 }
-\references{no further references}
 \author{atomczik}
-\note{no further notes}
+
 
 
 \seealso{abundance_crop}

@@ -16,12 +16,10 @@ otu.normed, otu.counts or any other data frame with a participant ID column}
 \value{
 The output is a list of 'study_id's that do not match between the two inputs
 }
-\references{
-no references}
+
 \author{
 atomczik}
-\note{
-no further notes}
+
 
 
 \seealso{

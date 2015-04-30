@@ -2,7 +2,7 @@
 \alias{gene2pathway}
 
 \title{gene2pathway}
-\description{[TEXT]}
+\description{This function converts}
 \usage{gene2pathway=function(wgs.counts, functional.map, path.level)}
 \arguments{
   \item{counts}{[TEXT]}
@@ -50,8 +50,8 @@ gene2path=function(wgs.counts, functional.map, path.level){
     # Create column index
     col=index[i];col
     pathway.annot=pathway.file[[i]]
-    path.annot.match=row.names(participant.gene.count)%in%pathway.annot
-    which.row=which(row.names(participant.gene.count)%in%pathway.annot)
+    path.annot.match=row.names(participant.gene.count)
+    which.row=which(row.names(participant.gene.count))
     part.number=length(participant.gene.count)
     path.gene.counts=participant.gene.count[which.row,]  
     path.count=apply(path.gene.counts, 2, sum) 

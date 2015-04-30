@@ -5,7 +5,6 @@
 \usage{
 meta_ID_match(data, otu)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{data}{metadata or any other data frame with a participant ID column}
   \item{otu}{otu.normed, otu.counts or any other data frame with a participant ID column}
@@ -15,12 +14,10 @@ meta_ID_match(data, otu)
 \value{
 The output is a list of 'study_id's that match between the two inputs
 }
-\references{
-no references}
+
 \author{
 atomczik}
-\note{
-no further notes}
+
 
 
 \seealso{meta_ID_error}
