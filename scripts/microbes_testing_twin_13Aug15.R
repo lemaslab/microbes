@@ -9,15 +9,13 @@
 rm(list=ls())
 now=Sys.Date(); today=format(now, format="%d%b%y")
 
-
-##library(ade4) ## Only necessary if using dudi.pca() for PCA
-##library(FactoMineR) ## Only necessary if using PCA() for PCA
-library(plyr)
-library(reshape2)
-library(gtable)
+# install.packages(devtools)
+# install Rtools 3.3 from http://cran.r-project.org/bin/windows/Rtools/ and then run find_rtools().
+# on UF system, I needed to add C:\\Rtools\\bin & C:\\Rtools\\gcc-4.6.3\\bin to the PATH
 library(devtools)
-library(ggplot2)
-library(reshape)
+# find_rtools(T)
+# check the PATH
+# Sys.getenv("PATH")
 
 #setwd("C:/Users/tomczika/Documents/GitHub/microbes")
 #load_all()
