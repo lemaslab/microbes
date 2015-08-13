@@ -1,7 +1,3 @@
-## Updated 05Mar15
-## I cleaned data with this file
-## G:\Friedman Lab\Microbiome\Twin_Study\Scripts
-## twin_data_cleaning_25Feb15 
 
 #####################################################################################################
 ##########################                Start-up                         ##########################
@@ -12,19 +8,50 @@ now=Sys.Date(); today=format(now, format="%d%b%y")
 # install.packages(devtools)
 # install Rtools 3.3 from http://cran.r-project.org/bin/windows/Rtools/ and then run find_rtools().
 # on UF system, I needed to add C:\\Rtools\\bin & C:\\Rtools\\gcc-4.6.3\\bin to the PATH
-library(devtools)
 # find_rtools(T)
 # check the PATH
 # Sys.getenv("PATH")
 
-#setwd("C:/Users/tomczika/Documents/GitHub/microbes")
-#load_all()
+library(devtools)
 install_github("dlemas/microbes")
 library(microbes)
 
+#####################################################################################################
+##########################           Explore Data Sets                     ##########################
+#####################################################################################################
+
+# Twin Study Data
+meta <- twin.meta.18mz;            head(meta)
+otu.phylum <- twin.18mz.phylum;    head(otu.phylum)
+otu.family <- twin.18mz.family;    head(otu.family)
+otu.genus <- twin.18mz.genus;      head(otu.genus)
+wgs.counts <- twin.wgs.18mz.ko.l4; head(wgs.counts)
+
+
 
 #####################################################################################################
-##########################                Analysis                         ##########################
+##########################          TAXONOMIC ANALYSES                     ##########################
+#####################################################################################################
+## Normalize
+otu.normed=normalize_counts(otu.phylum)
+sum(otu.normed[,2])
+
+## Drop OTUs that occur in < 4 participants
+otu.normed <- prevalence_crop(otu.normed, 0.2) ## removed 5
+
+## Crop out bugs with low relative abundance bugs 
+otu.normed <- abundance_crop(otu.normed, 0.001) ## removed 3
+
+## Calculate Diversity   
+div.table=alpha_diversity_calc(otu.counts, meta$sample_name, meta$sample.twin_mother)
+
+## Compare Accordint to twin grouping   
+twin.compare <- group_compare(otu.normed, meta, meta$sample_name, meta$sample.twin_mother)
+div.compare = group_compare(div.table, meta, meta$sample_name, meta$sample.twin_mother)
+
+
+#####################################################################################################
+##########################                METAGENOMIC ANALYSES             ##########################
 #####################################################################################################
 
 ##  Reduce COG genes to COG pathways     
