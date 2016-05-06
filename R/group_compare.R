@@ -63,10 +63,10 @@ group_compare <- function(otu.normed, meta, library_id, grouping_variable) {
     col=index[i]
     
     # Pull values to populate table
-    grp1.mean=round(mean_group[1,i-1],digits=3)
-    grp1.sd=round(mean_group[2,i-1],digits=3)
-    grp2.mean=round(sd_group[1,i-1], digits=3)
-    grp2.sd=round(sd_group[2,i-1], digits=3)  
+    grp1.mean = round(mean_group[1, i - 1], digits = 3)  # changed 05May16
+    grp1.sd = round(sd_group[1, i - 1], digits = 3)      # changed 05May16
+    grp2.mean = round(mean_group[2, i - 1], digits = 3)  # changed 05May16
+    grp2.sd = round(sd_group[2, i - 1], digits = 3)      # changed 05May16
     
     # Now caluclate the t-test
     stats.t=t.test(merged.data[,col]~merged.data[,2])
