@@ -19,16 +19,15 @@
 prevalence_crop <- function(df, x) {
   n <- length(row.names(df))
   m <- length(df)
-  k <- m+1
-  
-for (i in 1:n)
-  {df$blank[i] <- (sum((df[i,]) <=0.0000001))}
-
-df <- subset(df, !(df$blank>=((1-x)*m)))
-df <- df[,-k]
-
-
-return(df)
+  k <- m + 1;k2=m+2
+  for (i in 1:n) {
+    temp=ifelse(df[i,c(1:m)]==0,TRUE,FALSE)
+    df$blank[i] <- length(which(temp==TRUE))  
+    df$blank2[i]=df$blank[i]/m
+  } # end function
+  df <- subset(df, !(df$blank >=x))
+  df <- df[,c(-k, -k2)]
+  return(df)
 
 } # End function
 
