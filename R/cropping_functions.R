@@ -63,10 +63,11 @@ outersect <- function(x, y) {
 # **************************************************************************** #
 # ***************             outersect() Function             *************** #
 # **************************************************************************** #
-head(otu.phylum.mouse)
-myvars=as.character(mouse.meta.GF$Library)
-new.phylum=otu.phylum.mouse[myvars]
-names(new.phylum);head(new.phylum)
+trim_library <- function(df, library_keep) {
+	myvars=as.character(library_keep)
+	new.df=df[myvars]
+	return(new.df)
+} #end function
 		 
 # **************************************************************************** #
 # ***************             explicet_prep() Function         *************** #
