@@ -15,7 +15,6 @@
 # ***************        prevalence_crop() Function            *************** #
 # **************************************************************************** #
 
-
 prevalence_crop <- function(df, x) {
   n <- length(row.names(df))
   m <- length(df)
@@ -32,8 +31,9 @@ prevalence_crop <- function(df, x) {
 } # End function
 
 # **************************************************************************** #
-# ***************        abundance_crop() Function            *************** #
+# ***************        abundance_crop() Function             *************** #
 # **************************************************************************** #
+
 abundance_crop <- function(df, x) {
   n <- length(row.names(df))
   m <- length(df)
@@ -50,3 +50,31 @@ head(df)
 return(df)
 
 } #End of function
+
+# **************************************************************************** #
+# ***************             outersect() Function             *************** #
+# **************************************************************************** #
+
+outersect <- function(x, y) {
+  sort(c(x[!x%in%y],
+         y[!y%in%x]))
+} #end function
+		 
+# **************************************************************************** #
+# ***************             outersect() Function             *************** #
+# **************************************************************************** #
+head(otu.phylum.mouse)
+myvars=as.character(mouse.meta.GF$Library)
+new.phylum=otu.phylum.mouse[myvars]
+names(new.phylum);head(new.phylum)
+		 
+# **************************************************************************** #
+# ***************             explicet_prep() Function         *************** #
+# **************************************************************************** #
+explicet_prep<- function(df) {
+  # rownames format
+    rownames(df)=df[,1]
+    df2=df[-1]
+  # drop root
+    df3=df2[-1,]
+  return(df3)} #end function		 
