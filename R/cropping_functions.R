@@ -61,8 +61,9 @@ outersect <- function(x, y) {
 } #end function
 		 
 # **************************************************************************** #
-# ***************             outersect() Function             *************** #
+# ***************             trim_library() Function          *************** #
 # **************************************************************************** #
+
 trim_library <- function(df, library_keep) {
 	myvars=as.character(library_keep)
 	new.df=df[myvars]
@@ -72,10 +73,36 @@ trim_library <- function(df, library_keep) {
 # **************************************************************************** #
 # ***************             explicet_prep() Function         *************** #
 # **************************************************************************** #
+
 explicet_prep<- function(df) {
   # rownames format
     rownames(df)=df[,1]
     df2=df[-1]
   # drop root
     df3=df2[-1,]
-  return(df3)} #end function		 
+  return(df3)} #end function	
+
+# **************************************************************************** #
+# ***************             rename_library() Function          *************** #
+# **************************************************************************** #  
+
+rename_library<- function(df, library_order) {
+	sort.by=as.character(library_order)
+	df.sort=df[,library_order]
+	colnames(df.sort)=library_order
+	return(df.sort)
+} # end function
+
+# **************************************************************************** #
+# ***************             drop_otu_blanks() Function       *************** #
+# **************************************************************************** # 
+
+drop_otu_blanks<- function(df) { 
+	df$count_sum=rowSums(df, na.rm=F)
+	new.df <- df[ which(df$count_sum>0), ]
+	myvars <- names(new.df) %in% c("count_sum") 
+	newdata <- new.df[!myvars]  
+	return(newdata)
+} # end function
+  
+  
