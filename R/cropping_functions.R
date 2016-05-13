@@ -86,10 +86,10 @@ explicet_prep<- function(df) {
 # ***************             rename_library() Function          *************** #
 # **************************************************************************** #  
 
-rename_library<- function(df, library_order) {
-	sort.by=as.character(library_order)
-	df.sort=df[,library_order]
-	colnames(df.sort)=library_order
+rename_library<- function(df, library.old.names, library.new.names) {
+	sort.by=as.character(library.old.names)
+	df.sort=df[,library.old.names]
+	colnames(df.sort)=library.new.names
 	return(df.sort)
 } # end function
 
